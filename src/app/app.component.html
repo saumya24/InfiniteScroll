@@ -1,0 +1,21 @@
+<h1 class="title well">
+ Infinite Scroll
+  <section>
+  <small>now triggering scroll in {{direction}} direction , Scroll Screen to check infinte scroll</small>
+  </section>
+</h1>
+<div class="message">
+  Scroll doesn not reach bottom, untill all data is loaded. 
+  Data keeps loading as we scroll.
+</div>
+<div class="search-results"
+      infinite-scroll
+      [infiniteScrollDistance]="scrollDistance"
+      [infiniteScrollUpDistance]="scrollUpDistance"
+      [infiniteScrollThrottle]="throttle"
+      (scrolled)="onScrollDown()"
+      (scrolledUp)="onUp()">
+  <p *ngFor="let i of array">
+    {{ i }}
+  </p>
+</div>
